@@ -44,11 +44,11 @@ public class PersonController {
     }
 
     @PostMapping("/people")
-    public CreatedResponse createPerson(@Valid @RequestBody InboundPerson inboundPerson) {
+    public ResponseEntity<CreatedResponse> createPerson(@Valid @RequestBody InboundPerson inboundPerson) {
         var person = ((PersonConverter) converter).inboundDtoToModel(inboundPerson);
         var response = service.create(person);
 
-        return response;
+        return ResponseEntity.created(null).body(response);
     }
 
     @PutMapping("/people/{id}")

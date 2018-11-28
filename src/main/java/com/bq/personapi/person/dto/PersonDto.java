@@ -11,6 +11,17 @@ public class PersonDto {
     private long updatedAt;
     private long deletedAt;
 
+    public PersonDto() {
+        this.id = "";
+        this.name = "";
+        this.lastName = "";
+        this.email = "";
+        this.age = -1;
+        this.createdAt = -1;
+        this.updatedAt = -1;
+        this.deletedAt = -1;
+    }
+
     public PersonDto(String name, String lastName, String email, int age) {
         this.name = name;
         this.lastName = lastName;
