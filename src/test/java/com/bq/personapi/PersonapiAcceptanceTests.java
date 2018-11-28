@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty"})
 @SpringBootTest
-public class PersonDtoApiApplicationTests {
+public class PersonapiAcceptanceTests {
 
 	@Test
 	public void contextLoads() {
