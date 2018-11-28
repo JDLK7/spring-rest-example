@@ -2,7 +2,6 @@ package com.bq.personapi.person.configuration;
 
 import com.bq.personapi.person.converter.Converter;
 import com.bq.personapi.person.converter.PersonConverter;
-import com.bq.personapi.person.repository.PersonRepository;
 import com.bq.personapi.person.repository.Repository;
 import com.bq.personapi.person.service.PersonService;
 import com.bq.personapi.person.service.Service;
@@ -22,8 +21,4 @@ public class AppConfig {
         return new PersonService();
     }
 
-    @Bean("PersonRepository")
-    public Repository personRepository() {
-        return new PersonRepository();
-    }
 }

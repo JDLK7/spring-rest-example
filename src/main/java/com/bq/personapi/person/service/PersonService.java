@@ -4,7 +4,6 @@ import com.bq.personapi.person.dto.CreatedResponse;
 import com.bq.personapi.person.model.Person;
 import com.bq.personapi.person.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,16 +14,13 @@ import java.util.UUID;
 public class PersonService implements Service<Person> {
 
     @Autowired
-    @Qualifier("PersonRepository")
-    private Repository<Person> repository;
+    private Repository repository;
 
     @Override
     public CreatedResponse create(Person model) {
         var currentTimestamp = System.currentTimeMillis();
         var createdResponse = new CreatedResponse();
         var uuid = UUID.randomUUID().toString();
-
-//        createdResponse.setId(uuid);
 
         model.setId(uuid);
         model.setCreatedAt(currentTimestamp);

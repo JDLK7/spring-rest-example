@@ -2,11 +2,15 @@ package com.bq.personapi.person.model;
 
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document()
 public class Person {
 
     public static final String KIND = "people";
 
+    @Id
     private String id;
     private String name;
     private String lastName;
